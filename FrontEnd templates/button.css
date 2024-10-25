@@ -1,0 +1,73 @@
+.main {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+    background-color: gray;
+}
+
+.button {
+    width: 150px;
+    height: 50px;
+    background-color: rgb(98, 5, 134);
+    border: 0.5px solid rgb(66, 46, 46);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 36px;
+    transition: background-color 0.3s ease; 
+    position: relative;
+    cursor: pointer;
+}
+
+.button .text, .button .icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    height: 100%; 
+    text-align: center;
+}
+
+.button::before {
+    content: "Size: 10mb"; 
+    position: absolute;
+    bottom: 60px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    white-space: nowrap;
+}
+
+.button:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.text {
+    opacity: 1;
+    transition: opacity 0.3s ease; 
+}
+
+.icon {
+    opacity: 0;
+    transform: scale(0.8); 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+.button:hover .text {
+    opacity: 0;
+}
+
+.button:hover .icon {
+    opacity: 1;
+    transform: scale(1);
+}
